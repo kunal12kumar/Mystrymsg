@@ -13,7 +13,7 @@ const connection: connectionObject={}  // this is to store the current status of
 
 // creating a fuction to connect with the mongodb consdering wheter it is connected already or not 
 
-const mongodbconnect= async()=>{
+export const mongodbconnect= async()=>{
 
     // to check whether our database is already connected or not
 

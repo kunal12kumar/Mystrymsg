@@ -1,4 +1,5 @@
 import mongoose ,{Schema, Document} from "mongoose";
+import { string } from "zod";
 
 
 // now we are using typescript to specify validation and custome validation 
@@ -30,7 +31,8 @@ export interface User extends Document{
     username:string;
     email:string;
     password:string;
-    verifycode:boolean;
+    verifycode:string;
+    isVarified:boolean,
     codeexpire:Date;
     isAccepted:boolean;
     message:Message[]
@@ -59,6 +61,10 @@ const UserSchema : Schema <User>= new Schema({
 
     },
     verifycode:{
+        type:String,
+        required:true
+    },
+    isVarified:{
         type:Boolean,
         required:true
     },
